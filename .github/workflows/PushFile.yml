@@ -17,7 +17,7 @@ jobs:
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
-        source_file: 'File.txt'
+        source_file: 'Imagens'
         destination_repo: 'RafaelReis891/Web_Models'
         destination_folder: 'Web_Models'
         user_email: 'geraldorafaelreis@gmail.com'
