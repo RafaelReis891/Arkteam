@@ -1,0 +1,22 @@
+name: Push File
+
+on: push
+
+jobs:
+  copy-file:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Pushes test file
+      uses: RafaelReis891/Arkteam@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      with:
+        source_file: 'file.txt'
+        destination_repo: 'RafaelReis891/Web_Models'
+        destination_folder: 'Web_Models'
+        user_email: 'geraldorafaelreis@gmail.com'
+        user_name: 'RafaelReis891'
+        commit_message: 'A custom message for the commit'
