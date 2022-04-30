@@ -1,20 +1,24 @@
+on: 
+  push:
+    branches:
+      - main
+      
 name: Push File
-
-on: push
 
 jobs:
   copy-file:
+    name: 🎉 Checkout
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v2
 
     - name: Pushes test file
-      uses: RafaelReis891/Arkteam@main
+      uses: dmnemec/copy_file_to_another_repo_action@main
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
-        source_file: 'file.txt'
+        source_file: 'File.txt'
         destination_repo: 'RafaelReis891/Web_Models'
         destination_folder: 'Web_Models'
         user_email: 'geraldorafaelreis@gmail.com'
